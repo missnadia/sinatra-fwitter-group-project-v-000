@@ -44,7 +44,7 @@ class TweetsController < ApplicationController
         redirect to "/tweets"
       end
     else
-      redirect "/login"
+      redirect to "/login"
     end
   end
 
