@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <% @user.tweets.each do |tweet| %>
-      <%= tweet.content %>
-    <% end %>
-  </body>
-</html>
+<% @user.tweets.each do |tweet| %>
+  <%= tweet.content %>
+<% end %>
