@@ -1,11 +1,11 @@
 class TweetsController < ApplicationController
 
   get '/tweets' do
-    logged_in? ? (@tweets = Tweet.all erb :"/tweets/tweets") : (redirect "/login")
+    logged_in? ? (@tweets = Tweet.all erb :"/tweets/tweets") : (redirect to "/login")
   end
 
   get '/tweets/new' do
-    logged_in? ? (erb :"/tweets/create_tweet") : (redirect "/login")
+    logged_in? ? (erb :"/tweets/create_tweet") : (redirect to "/login")
   end
 
   post '/tweets' do
