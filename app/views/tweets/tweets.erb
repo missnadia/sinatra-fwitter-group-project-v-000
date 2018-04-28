@@ -1,5 +1,12 @@
 <% if logged_in?(session) %>
   <h1>Welcome <%= current_user.username %></h1>
+
+  <% @tweets.each do |tweet| %>
+  <br>
+    <%= tweet.content %>
+  </br>
+  <% end %>
+
   <h4><a href="/logout">Log Out</a></h4>
 <% else %>
   <h4><a href="/login">Log In</a></h4>
