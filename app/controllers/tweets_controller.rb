@@ -18,13 +18,13 @@ class TweetsController < ApplicationController
       if params[:content] == ""
         redirect to "/tweets/new"
       else
+        binding.pry
         @tweet = current_user.tweets.create(content: params[:content])
         redirect to "/tweets/#{@tweet.id}" if @tweet.save
       end
     else
       redirect to '/login'
     end
-    binding.pry
   end
 
   get '/tweets/:id' do
