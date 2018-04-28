@@ -7,7 +7,6 @@ class UserController < ApplicationController
 
   get '/signup' do
     !logged_in? ? (erb :"/users/create_user") : (redirect "/tweets")
-    end
   end
 
   post '/signup' do
