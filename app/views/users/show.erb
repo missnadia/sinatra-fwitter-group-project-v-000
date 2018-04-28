@@ -5,12 +5,8 @@
     <title></title>
   </head>
   <body>
-    <p> Here are your tweets, <%= @user.username %>
     <% @user.tweets.each do |tweet| %>
-      <div>
         <%= tweet.content %>
-      </div>
     <% end %>
-    <p>tweeting!</p>
   </body>
 </html>
