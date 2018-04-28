@@ -50,13 +50,14 @@ class TweetsController < ApplicationController
 
   patch '/tweets/:id' do
     if logged_in?
+      binding.pry
       if params[:content] == ""
         redirect "/tweets/#{params[:id]}/edit"
       else
         @tweet = Tweet.find_by_id(params[:id])
         if @tweet.user == current_user
           @tweet.update(content: params[:content])
-          redirect to "/tweets/#{@tweet.id}" if @tweet.save
+          redirect to "/tweets/#{@tweet.id}"
         else
           redirect to "/tweets"
         end
