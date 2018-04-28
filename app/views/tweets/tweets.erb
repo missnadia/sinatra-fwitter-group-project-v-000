@@ -2,9 +2,9 @@
   <h1>Welcome <%= current_user.username %></h1>
 
   <% @tweets.each do |tweet| %>
-  <br>
+  <div>
     <%= tweet.content %>
-  </br>
+  </div>
   <% end %>
 
   <h4><a href="/logout">Log Out</a></h4>
