@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    !logged_in? ? (erb :"/users/login") : (redirect to "/tweets")
+    (!logged_in?) ? (erb :"/users/login") : (redirect to "/tweets")
   end
 
   post '/login' do
