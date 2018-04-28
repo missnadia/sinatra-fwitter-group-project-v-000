@@ -6,31 +6,31 @@ class UserController < ApplicationController
   end
 
   get '/signup' do
-    !logged_in? ? (erb :"/users/create_user") : (redirect "/tweets")
+    !logged_in? ? (erb :"/users/create_user") : (redirect to "/tweets")
   end
 
   post '/signup' do
     if params[:username] == "" || params[:password] == "" || params[:email] == ""
-      redirect "/signup"
+      redirect to "/signup"
     else
       @user = User.new(username: params[:username], password: params[:password], email: params[:email])
       @user.save
       session[:user_id] = @user.id
-      redirect "/tweets"
+      redirect to "/tweets"
     end
   end
 
   get '/login' do
-    logged_in? ? (erb :"/users/login") : (redirect '/tweets')
+    logged_in? ? (erb :"/users/login") : (redirect to "/tweets")
   end
 
   post '/login' do
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect "/tweets"
+      redirect to "/tweets"
     else
-      redirect "/signup"
+      redirect to "/signup"
     end
   end
 
