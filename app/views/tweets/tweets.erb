@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <p>Welcome, <%=current_user.username %></p>
   <% @tweets.each do |tweet| %>
   <div>
     <%= tweet.content %>
