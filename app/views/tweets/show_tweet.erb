@@ -1,4 +1,5 @@
 <% if logged_in? %>
+  <h2>Delete Tweet</h2>
   <%= @tweet.content %>
   <form method="post" action="/tweets/<%= @tweet.id %>/delete">
     <input id="hidden" type="hidden" name="_method" value="delete">
