@@ -48,10 +48,8 @@ class TweetsController < ApplicationController
     end
   end
 
-binding.pry
   patch '/tweets/:id' do
     if logged_in?
-
       if params[:content] == ""
         redirect "/tweets/#{params[:id]}/edit"
       else
@@ -68,7 +66,7 @@ binding.pry
       redirect to "/login"
     end
   end
-
+binding.pry
   delete '/tweets/:id/delete' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
