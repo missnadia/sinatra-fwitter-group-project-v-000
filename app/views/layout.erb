@@ -16,6 +16,12 @@
     </nav>
     <div class="container">
       <%= yield %>
+
+      <% @tweets.each do |tweet| %>
+      <div>
+        <%= tweet.content %>
+      </div>
+      <% end %>
     </div>
   </body>
 </html>
